@@ -1,0 +1,723 @@
+<html lang="en" class="scroll-smooth" data-theme="dark">
+ <head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Portfolio - Bhumi | MCA Student</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+   tailwind.config = {
+     darkMode: "class",
+     theme: {
+       extend: {
+         colors: {
+           peach: {
+             400: "#ff9f80",
+           },
+           teal: {
+             400: "#14b8a6",
+             500: "#0d9488",
+           },
+         },
+         fontFamily: {
+           poppins: ["Poppins", "sans-serif"],
+         },
+         animation: {
+           "bounce-slow": "bounce 2.5s infinite",
+         },
+       },
+     },
+   };
+  </script>
+  <link
+   href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+   rel="stylesheet"
+  />
+  <link
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+   rel="stylesheet"
+  />
+  <style>
+   body {
+     font-family: "Poppins", sans-serif;
+   }
+   .heart {
+     position: fixed;
+     width: 20px;
+     height: 20px;
+     background: #ff9f80;
+     transform: rotate(-45deg);
+     animation: floatUp 4s linear infinite;
+     opacity: 0.8;
+     z-index: 9999;
+   }
+   .heart:before,
+   .heart:after {
+     content: "";
+     position: absolute;
+     width: 20px;
+     height: 20px;
+     background: #ff9f80;
+     border-radius: 50%;
+   }
+   .heart:before {
+     top: -10px;
+     left: 0;
+   }
+   .heart:after {
+     left: 10px;
+     top: 0;
+   }
+   @keyframes floatUp {
+     0% {
+       transform: translateY(0) rotate(-45deg);
+       opacity: 0.8;
+     }
+     100% {
+       transform: translateY(-200px) rotate(-45deg);
+       opacity: 0;
+     }
+   }
+  </style>
+ </head>
+ <body class="bg-black text-white transition-colors duration-500 dark:bg-white dark:text-black">
+  <header
+   class="sticky top-0 z-50 bg-black bg-opacity-90 backdrop-blur-md shadow-md dark:bg-white dark:bg-opacity-90"
+  >
+   <nav
+    class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
+    aria-label="Primary Navigation"
+   >
+    <a
+     class="text-teal-400 font-extrabold text-2xl tracking-wide dark:text-teal-500 flex items-center space-x-2"
+     href="#"
+    >
+     <i class="fas fa-smile-beam animate-bounce-slow text-peach-400"></i>
+     <span>Welcome !</span>
+    </a>
+    <ul class="hidden md:flex space-x-10 text-white font-semibold dark:text-gray-800">
+     <li>
+      <a class="hover:text-teal-400 transition dark:hover:text-teal-500" href="#about"
+       >About</a
+      >
+     </li>
+     <li>
+      <a class="hover:text-teal-400 transition dark:hover:text-teal-500" href="#projects"
+       >Projects</a
+      >
+     </li>
+     <li>
+      <a class="hover:text-teal-400 transition dark:hover:text-teal-500" href="#skills"
+       >Skills</a
+      >
+     </li>
+     <li>
+      <a
+       class="hover:text-teal-400 transition dark:hover:text-teal-500"
+       href="#experience"
+       >Experience</a
+      >
+     </li>
+     <li>
+      <a
+       class="hover:text-teal-400 transition dark:hover:text-teal-500"
+       href="#education"
+       >Education</a
+      >
+     </li>
+     <li>
+      <a class="hover:text-teal-400 transition dark:hover:text-teal-500" href="#contact"
+       >Contact</a
+      >
+     </li>
+    </ul>
+    <div class="flex items-center space-x-4">
+     <button
+      aria-label="Toggle dark mode"
+      id="theme-toggle"
+      class="text-teal-400 hover:text-peach-400 transition focus:outline-none text-2xl"
+      title="Toggle Light/Dark Mode"
+     >
+      <i class="fas fa-moon"></i>
+     </button>
+     <button
+      aria-label="Toggle menu"
+      class="md:hidden text-teal-400 focus:outline-none"
+      id="menu-btn"
+     >
+      <i class="fas fa-bars fa-lg"></i>
+     </button>
+    </div>
+   </nav>
+   <div
+    aria-label="Mobile menu"
+    class="hidden md:hidden bg-black bg-opacity-95 dark:bg-white dark:bg-opacity-95"
+    id="mobile-menu"
+    role="menu"
+   >
+    <ul
+     class="flex flex-col space-y-4 px-6 py-6 text-white font-semibold text-lg dark:text-gray-800"
+    >
+     <li>
+      <a class="hover:text-teal-400 transition block dark:hover:text-teal-500" href="#about"
+       >About</a
+      >
+     </li>
+     <li>
+      <a class="hover:text-teal-400 transition block dark:hover:text-teal-500" href="#projects"
+       >Projects</a
+      >
+     </li>
+     <li>
+      <a class="hover:text-teal-400 transition block dark:hover:text-teal-500" href="#skills"
+       >Skills</a
+      >
+     </li>
+     <li>
+      <a
+       class="hover:text-teal-400 transition block dark:hover:text-teal-500"
+       href="#experience"
+       >Experience</a
+      >
+     </li>
+     <li>
+      <a
+       class="hover:text-teal-400 transition block dark:hover:text-teal-500"
+       href="#education"
+       >Education</a
+      >
+     </li>
+     <li>
+      <a class="hover:text-teal-400 transition block dark:hover:text-teal-500" href="#contact"
+       >Contact</a
+      >
+     </li>
+    </ul>
+   </div>
+  </header>
+  <main class="max-w-7xl mx-auto px-6 pt-16 pb-24">
+   <!-- Hero Section -->
+   <section
+    class="flex flex-col-reverse md:flex-row items-center md:items-start gap-12 md:gap-24"
+   >
+    <div class="flex-1 max-w-xl text-center md:text-left">
+     <h1
+      class="text-5xl md:text-6xl font-extrabold text-teal-400 leading-tight dark:text-teal-500"
+     >
+      Hi, I'm
+      <span class="text-peach-400">Bhumi</span>
+     </h1>
+     <p class="mt-6 text-white text-lg md:text-xl leading-relaxed dark:text-gray-900">
+      MCA student at Banasthali Vidyapith with a passion for Frontend
+      Development, UI/UX design, and programming. Skilled in Java, Python,
+      HTML, CSS, and Tailwind CSS.
+     </p>
+     <div class="mt-8 flex justify-center md:justify-start space-x-6">
+      <a
+       class="px-6 py-3 bg-teal-400 hover:bg-teal-500 rounded-lg font-semibold transition shadow-lg dark:bg-teal-500 dark:hover:bg-teal-600 dark:text-black"
+       href="#projects"
+       >View Projects</a
+      >
+      <a
+       class="px-6 py-3 border-2 border-teal-400 hover:border-peach-400 rounded-lg font-semibold transition text-teal-400 hover:text-peach-400 shadow-lg dark:border-teal-500 dark:text-teal-500 dark:hover:border-peach-400"
+       href="#contact"
+       >Contact Me</a
+      >
+     </div>
+    </div>
+    <div class="flex-1 max-w-md">
+     <img
+      alt="Portrait of young Indian female student with long hair, smiling confidently, wearing casual attire"
+      class="rounded-3xl shadow-2xl mx-auto md:mx-0"
+      height="400"
+      loading="lazy"
+      src="C:\Users\Lenovo\Desktop\portfoliob1\IMG-20250111-WA0286.jpg"
+      width="400"
+     />
+    </div>
+   </section>
+   <!-- About Section -->
+   <section class="mt-32 max-w-4xl mx-auto text-center" id="about">
+    <h2
+     class="text-4xl font-extrabold text-teal-400 mb-6 dark:text-teal-500"
+     >About Me</h2
+    >
+    <p class="text-white text-lg leading-relaxed max-w-3xl mx-auto dark:text-gray-900">
+     I am pursuing my Master of Computer Applications (M.C.A) from Banasthali
+     Vidyapith. After my first semester, I scored a CPI of 8.93. Previously, I
+     completed my undergraduate studies at Ranchi Women College with a CPI
+     above 8. I am passionate about Frontend Development, UI/UX design, and
+     programming, and I enjoy building smooth, user-friendly web applications.
+    </p>
+   </section>
+   <!-- Projects Section -->
+   <section class="mt-32 max-w-7xl mx-auto" id="projects">
+    <h2
+     class="text-4xl font-extrabold text-teal-400 mb-12 text-center dark:text-teal-500"
+    >
+     Projects
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+     <article
+      class="bg-gray-900 rounded-3xl shadow-lg overflow-hidden hover:shadow-teal-500/50 transition-shadow duration-300 dark:bg-gray-100"
+     >
+      <img
+       alt="Road lane detection using OpenCV and Python showing a car on a road with detected lanes highlighted in teal and peach colors"
+       class="w-full h-48 object-cover"
+       height="400"
+       loading="lazy"
+       src="https://storage.googleapis.com/a1aa/image/e7776a70-9a56-4682-d3a3-dd3c2c997f98.jpg"
+       width="600"
+      />
+      <div class="p-6">
+       <h3 class="text-xl font-semibold text-teal-400 mb-2 dark:text-teal-500">
+        Road Lane Detection using OpenCV &amp; Python
+       </h3>
+       <p class="text-white mb-4 text-sm leading-relaxed dark:text-gray-900">
+        Developed a computer vision application to detect road lanes in
+        real-time video streams using OpenCV and Python, enhancing driver
+        assistance systems.
+       </p>
+       <a
+        class="text-peach-400 font-semibold hover:underline inline-flex items-center space-x-2"
+        href="#"
+       >
+        <span>View Details</span>
+        <i class="fas fa-arrow-right"></i>
+       </a>
+      </div>
+     </article>
+     <article
+      class="bg-gray-900 rounded-3xl shadow-lg overflow-hidden hover:shadow-teal-500/50 transition-shadow duration-300 dark:bg-gray-100"
+     >
+      <img
+       alt="Sentiment analysis Flask web application interface with charts and text input in teal and peach colors"
+       class="w-full h-48 object-cover"
+       height="400"
+       loading="lazy"
+       src="https://storage.googleapis.com/a1aa/image/7da7a0aa-d19b-4567-87b9-aa2ddac9996b.jpg"
+       width="600"
+      />
+      <div class="p-6">
+       <h3 class="text-xl font-semibold text-teal-400 mb-2 dark:text-teal-500">
+        Sentiment Analysis Flask Web Application
+       </h3>
+       <p class="text-white mb-4 text-sm leading-relaxed dark:text-gray-900">
+        Built a Flask web app that performs sentiment analysis on user input
+        using machine learning models, providing real-time feedback and
+        visualizations.
+       </p>
+       <a
+        class="text-peach-400 font-semibold hover:underline inline-flex items-center space-x-2"
+        href="#"
+       >
+        <span>View Details</span>
+        <i class="fas fa-arrow-right"></i>
+       </a>
+      </div>
+     </article>
+     <article
+      class="bg-gray-900 rounded-3xl shadow-lg overflow-hidden hover:shadow-teal-500/50 transition-shadow duration-300 dark:bg-gray-100"
+     >
+      <img
+       alt="Google shop website homepage showing merchandise with teal and peach color highlights"
+       class="w-full h-48 object-cover"
+       height="400"
+       loading="lazy"
+       src="https://storage.googleapis.com/a1aa/image/817c9061-ca62-453a-d8fd-6407de6ba9ec.jpg"
+       width="600"
+      />
+      <div class="p-6">
+       <h3 class="text-xl font-semibold text-teal-400 mb-2 dark:text-teal-500">
+        Google Shop Website
+       </h3>
+       <p class="text-white mb-4 text-sm leading-relaxed dark:text-gray-900">
+        Created a responsive e-commerce website to shop Google merchandise,
+        focusing on clean UI/UX design and smooth frontend interactions.
+       </p>
+       <a
+        class="text-peach-400 font-semibold hover:underline inline-flex items-center space-x-2"
+        href="#"
+       >
+        <span>View Details</span>
+        <i class="fas fa-arrow-right"></i>
+       </a>
+      </div>
+     </article>
+    </div>
+   </section>
+   <!-- Skills Section -->
+   <section class="mt-32 max-w-5xl mx-auto text-center" id="skills">
+    <h2
+     class="text-4xl font-extrabold text-teal-400 mb-12 dark:text-teal-500"
+    >
+     Skills &amp; Tools
+    </h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-10">
+     <div class="flex flex-col items-center space-y-3">
+      <img
+       alt="Java programming language logo in teal and peach colors"
+       class="w-16 h-16"
+       height="64"
+       loading="lazy"
+       src="https://storage.googleapis.com/a1aa/image/7f870462-c751-42d7-a7df-dded3f83f847.jpg"
+       width="64"
+      />
+      <span class="text-white font-semibold dark:text-gray-900">Java</span>
+     </div>
+     <div class="flex flex-col items-center space-y-3">
+      <img
+       alt="Python programming language logo in teal and peach colors"
+       class="w-16 h-16"
+       height="64"
+       loading="lazy"
+       src="https://storage.googleapis.com/a1aa/image/84e5dc17-84f3-426c-1b30-cffa5ce443f4.jpg"
+       width="64"
+      />
+      <span class="text-white font-semibold dark:text-gray-900">Python</span>
+     </div>
+     <div class="flex flex-col items-center space-y-3">
+      <img
+       alt="HTML5 logo in teal and peach colors"
+       class="w-16 h-16"
+       height="64"
+       loading="lazy"
+       src="https://storage.googleapis.com/a1aa/image/ea37a377-e8af-4792-90e7-3a7db0dff62a.jpg"
+       width="64"
+      />
+      <span class="text-white font-semibold dark:text-gray-900">HTML</span>
+     </div>
+     <div class="flex flex-col items-center space-y-3">
+      <img
+       alt="CSS3 logo in teal and peach colors"
+       class="w-16 h-16"
+       height="64"
+       loading="lazy"
+       src="https://storage.googleapis.com/a1aa/image/800b0a08-b6c9-4b77-a3d0-6c457caf5338.jpg"
+       width="64"
+      />
+      <span class="text-white font-semibold dark:text-gray-900">CSS</span>
+     </div>
+     <div class="flex flex-col items-center space-y-3">
+      <img
+       alt="JavaScript logo in teal and peach colors"
+       class="w-16 h-16"
+       height="64"
+       loading="lazy"
+       src="https://storage.googleapis.com/a1aa/image/c64557c8-5bf3-4583-8d28-7b243b56f055.jpg"
+       width="64"
+      />
+      <span class="text-white font-semibold dark:text-gray-900">JavaScript</span>
+     </div>
+     <div class="flex flex-col items-center space-y-3">
+      <img
+       alt="Tailwind CSS logo in teal and peach colors"
+       class="w-16 h-16"
+       height="64"
+       loading="lazy"
+       src="https://storage.googleapis.com/a1aa/image/54b7d7da-90c0-41ac-27a0-c765a45ba405.jpg"
+       width="64"
+      />
+      <span class="text-white font-semibold dark:text-gray-900">Tailwind CSS</span>
+     </div>
+    </div>
+   </section>
+   <!-- Experience Section -->
+   <section class="mt-32 max-w-5xl mx-auto" id="experience">
+    <h2
+     class="text-4xl font-extrabold text-teal-400 mb-12 text-center dark:text-teal-500"
+    >
+     Experience
+    </h2>
+    <div class="space-y-12 max-w-3xl mx-auto">
+     <!-- Google x AICTE Summer Intern 2025 -->
+     <div
+      class="bg-gray-900 rounded-3xl p-8 shadow-lg hover:shadow-teal-500/50 transition-shadow duration-300 dark:bg-gray-100 flex items-start space-x-6"
+     >
+      <img
+       alt="Google logo in square format"
+       src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Google_Favicon_2025.svg/250px-Google_Favicon_2025.svg.png"
+       class="w-16 h-16 object-contain rounded-lg"
+       loading="lazy"
+       width="64"
+       height="64"
+      />
+      <div>
+       <h3 class="text-2xl font-semibold text-white dark:text-gray-900">
+        Google x AICTE Summer Intern
+       </h3>
+       <p class="text-teal-400 font-semibold mb-2 dark:text-teal-500">
+        Google &amp; AICTE | Summer 2025
+       </p>
+       <ul
+        class="list-disc list-inside text-white text-sm leading-relaxed space-y-2 dark:text-gray-900"
+       >
+        <li>
+         Created a responsive Google Shop frontend to showcase merchandise
+         with smooth UI/UX.
+        </li>
+        <li>
+         Developed an upgraded note-keeping app inspired by Google Keep with
+         enhanced features and design.
+        </li>
+        <li>
+         Deployed updates on Google Drive by implementing an automated
+         tagging system to improve file organization.
+        </li>
+       </ul>
+      </div>
+     </div>
+     <!-- JP Morgan Apprentice Fall 2024 -->
+     <div
+      class="bg-gray-900 rounded-3xl p-8 shadow-lg hover:shadow-teal-500/50 transition-shadow duration-300 dark:bg-gray-100 flex items-start space-x-6"
+     >
+      <img
+       alt="JPMorgan Chase logo in square format"
+       src="https://www.canny-creative.com/wp-content/uploads/2024/09/JPMorganChase-brown-and-white.jpg"
+       class="w-16 h-16 object-contain rounded-lg"
+       loading="lazy"
+       width="64"
+       height="64"
+      />
+      <div>
+       <h3 class="text-2xl font-semibold text-white dark:text-gray-900">
+        JP Morgan Apprentice (Remote)
+       </h3>
+       <p class="text-teal-400 font-semibold mb-2 dark:text-teal-500">
+        JP Morgan Chase &amp; Co | Fall 2024
+       </p>
+       <ul
+        class="list-disc list-inside text-white text-sm leading-relaxed space-y-2 dark:text-gray-900"
+       >
+        <li>Completed software engineering work focused on the credit card rewards department.</li>
+        <li>Developed and tested features to improve customer reward tracking and redemption.</li>
+        <li>Worked in an agile team environment, participating in code reviews and sprint planning.</li>
+       </ul>
+      </div>
+     </div>
+     <!-- Zurn Elkay Winter 2022 - Early 2023 -->
+     <div
+      class="bg-gray-900 rounded-3xl p-8 shadow-lg hover:shadow-teal-500/50 transition-shadow duration-300 dark:bg-gray-100 flex items-start space-x-6"
+     >
+      <img
+       alt="Zurn Elkay logo in square format"
+       src="https://www.zurn.com/content/dam/zurnv49/news/thumbnails/zurn-elkay-complete-merger.jpg"
+       class="w-16 h-16 object-contain rounded-lg"
+       loading="lazy"
+       width="64"
+       height="64"
+      />
+      <div>
+       <h3 class="text-2xl font-semibold text-white dark:text-gray-900">
+        Winter Intern
+       </h3>
+       <p class="text-teal-400 font-semibold mb-2 dark:text-teal-500">
+        Zurn Elkay, Hyderabad | Nov 2022 - Feb 2023
+       </p>
+       <ul
+        class="list-disc list-inside text-white text-sm leading-relaxed space-y-2 dark:text-gray-900"
+       >
+        <li>Assisted in frontend development tasks and UI improvements for internal web applications.</li>
+        <li>Collaborated with cross-functional teams to enhance user experience and interface design.</li>
+        <li>Gained hands-on experience with React and Tailwind CSS in a professional environment.</li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Education Section -->
+   <section class="mt-32 max-w-5xl mx-auto" id="education">
+    <h2
+     class="text-4xl font-extrabold text-teal-400 mb-12 text-center dark:text-teal-500"
+    >
+     Education
+    </h2>
+    <div
+     class="bg-gray-900 rounded-3xl p-8 shadow-lg hover:shadow-teal-500/50 transition-shadow duration-300 max-w-3xl mx-auto dark:bg-gray-100 space-y-10"
+    >
+     <h3 class="text-2xl font-semibold text-white mb-4 dark:text-gray-900">
+      Master of Computer Applications (M.C.A)
+     </h3>
+     <p class="text-teal-400 font-semibold mb-2 dark:text-teal-500">
+      Banasthali Vidyapith | 2024 - Present
+     </p>
+     <p class="text-white mb-6 leading-relaxed dark:text-gray-900">
+      Currently pursuing M.C.A with a CPI of 8.93 after the first semester.
+      Focused on software development, frontend technologies, and UI/UX design.
+     </p>
+     <h3 class="text-2xl font-semibold text-white mb-4 dark:text-gray-900">
+      Bachelor of Computer Applications (B.C.A)
+     </h3>
+     <p class="text-teal-400 font-semibold mb-2 dark:text-teal-500">
+      Ranchi Women College | 2020 - 2023
+     </p>
+     <p class="text-white leading-relaxed dark:text-gray-900">
+      Completed undergraduate studies with a CPI above 8, building a strong
+      foundation in programming and computer science fundamentals.
+     </p>
+    </div>
+    <div
+     class="bg-gray-900 rounded-3xl p-8 shadow-lg hover:shadow-teal-500/50 transition-shadow duration-300 max-w-3xl mx-auto mt-16 dark:bg-gray-100 flex items-start space-x-6"
+    >
+     <img
+      alt="McKinsey & Company logo in square format"
+      src="https://cdn.cookielaw.org/logos/353d36fb-3a1c-4021-b831-ee6d50361d6a/07a8989e-cba1-4f60-a67a-0ffe9efc1b3a/5705935c-c99f-48d8-8aef-b78127f4aed3/mckinsey---company_owler_20190728_090718_original.png"
+      class="w-16 h-16 object-contain rounded-lg"
+      loading="lazy"
+      width="64"
+      height="64"
+     />
+     <div>
+      <h3 class="text-2xl font-semibold text-white dark:text-gray-900">
+       McKinsey Forward 2025
+      </h3>
+      <p class="text-teal-400 font-semibold mb-2 dark:text-teal-500">
+       Selected for McKinsey Accelerate Program
+      </p>
+      <ul
+       class="list-disc list-inside text-white text-sm leading-relaxed space-y-2 dark:text-gray-900 max-w-xl"
+      >
+       <li>Learning population scale problem solving</li>
+       <li>Critical thinking, reasoning, and logic</li>
+       <li>Empathy and business administration</li>
+      </ul>
+     </div>
+    </div>
+   </section>
+   <!-- Contact Section -->
+   <section class="mt-32 max-w-3xl mx-auto text-center" id="contact">
+    <h2
+     class="text-4xl font-extrabold text-teal-400 mb-8 dark:text-teal-500"
+    >
+     Get In Touch
+    </h2>
+    <p class="text-white mb-8 text-lg leading-relaxed dark:text-gray-900">
+     Whether you want to collaborate on a project, have questions, or just
+     want to say hi, feel free to reach out!
+    </p>
+    <form
+     action="mailto:bhumi.kumari@example.com"
+     class="space-y-6"
+     enctype="text/plain"
+     method="POST"
+    >
+     <input
+      class="w-full px-5 py-3 rounded-xl bg-gray-900 border border-teal-400 text-white placeholder-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-400 dark:bg-gray-100 dark:text-black dark:placeholder-teal-400"
+      name="name"
+      placeholder="Your Name"
+      required=""
+      type="text"
+     />
+     <input
+      class="w-full px-5 py-3 rounded-xl bg-gray-900 border border-teal-400 text-white placeholder-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-400 dark:bg-gray-100 dark:text-black dark:placeholder-teal-400"
+      name="email"
+      placeholder="Your Email"
+      required=""
+      type="email"
+     />
+     <textarea
+      class="w-full px-5 py-3 rounded-xl bg-gray-900 border border-teal-400 text-white placeholder-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-400 resize-none dark:bg-gray-100 dark:text-black dark:placeholder-teal-400"
+      name="message"
+      placeholder="Your Message"
+      required=""
+      rows="5"
+     ></textarea>
+     <button
+      class="w-full py-3 bg-teal-400 hover:bg-teal-500 rounded-xl font-semibold text-black transition shadow-lg dark:bg-teal-500 dark:hover:bg-teal-600"
+      type="submit"
+     >
+      Send Message
+     </button>
+    </form>
+    <div
+     class="mt-12 flex justify-center space-x-8 text-teal-400 text-2xl dark:text-teal-500"
+     role="list"
+    >
+     <a
+      aria-label="GitHub Profile"
+      class="hover:text-peach-400 transition"
+      href="https://github.com/Bhumi-Kumari"
+      rel="noopener"
+      role="listitem"
+      target="_blank"
+     >
+      <i class="fab fa-github"></i>
+     </a>
+     <a
+      aria-label="LinkedIn Profile"
+      class="hover:text-peach-400 transition"
+      href="https://www.linkedin.com/in/bhumi-kumari-6a5664299/"
+      rel="noopener"
+      role="listitem"
+      target="_blank"
+     >
+      <i class="fab fa-linkedin"></i>
+     </a>
+     <a
+      aria-label="Send Email"
+      class="hover:text-peach-400 transition"
+      href="mailto:bhumichourasia4@gmail.com"
+      role="listitem"
+     >
+      <i class="fas fa-envelope"></i>
+     </a>
+    </div>
+   </section>
+  </main>
+  <footer
+   class="bg-black bg-opacity-90 text-center py-6 mt-32 border-t border-teal-400/30 dark:bg-white dark:bg-opacity-90"
+  >
+   <p class="text-sm text-white/70 dark:text-black/70">© 2025 Bhumi. All rights reserved.</p>
+  </footer>
+  <script>
+   const menuBtn = document.getElementById("menu-btn");
+   const mobileMenu = document.getElementById("mobile-menu");
+   const themeToggleBtn = document.getElementById("theme-toggle");
+   const htmlEl = document.documentElement;
+
+   menuBtn.addEventListener("click", () => {
+     mobileMenu.classList.toggle("hidden");
+   });
+
+   function getPreferredTheme() {
+     if (localStorage.getItem("theme")) {
+       return localStorage.getItem("theme");
+     }
+     return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+   }
+
+   function setTheme(theme) {
+     if (theme === "dark") {
+       htmlEl.classList.add("dark");
+       themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+     } else {
+       htmlEl.classList.remove("dark");
+       themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+     }
+     localStorage.setItem("theme", theme);
+   }
+
+   setTheme(getPreferredTheme());
+
+   themeToggleBtn.addEventListener("click", () => {
+     if (htmlEl.classList.contains("dark")) {
+       setTheme("light");
+     } else {
+       setTheme("dark");
+     }
+   });
+
+   function createHeart() {
+     const heart = document.createElement("div");
+     heart.classList.add("heart");
+     heart.style.left = Math.random() * window.innerWidth + "px";
+     heart.style.animationDuration = 3 + Math.random() * 2 + "s";
+     heart.style.opacity = Math.random();
+     document.body.appendChild(heart);
+     setTimeout(() => {
+       heart.remove();
+     }, 4000);
+   }
+   setInterval(createHeart, 700);
+  </script>
+ </body>
+</html>
